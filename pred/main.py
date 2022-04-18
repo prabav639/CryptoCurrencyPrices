@@ -37,8 +37,8 @@ if __name__ == '__main__':
     fig = exp.line(data, x="Date", y="Prices", title='Cryptocurrency Prices',
                    labels=dict(Date="Days", Prices=f"Price in {curr}"))
 
-    fig.update_layout(legend=dict(title=curr))
+    fig = fig.update_layout(showlegend=True)
 
-    st.plotly_chart(fig, use_container_width=True, sharing="streamlit")
+    st.plotly_chart(fig, use_container_width=True)
 
     st.write(f"Average Price during this time was:  {sum(data['Prices']) / days:.2f} {curr}")
